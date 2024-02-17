@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>250</y>
+      <w>270</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>LoginViewModel
+--
+- _model: IOrderModel
++ UserName: string
+--
++ LoginViewModel(IOrderModel): void
+- LoginAsync(PasswordBox): void
+- OnLoginSuccess(): void
+- OnLoginFailed(): void
+- OnExitApplication(): void
+--
+&lt;&lt;Commands&gt;&gt;
++ ExitCommand: DelegateCommand
++ LoginCommand: DelegateCommand
+--
+&lt;&lt;Events&gt;&gt;
++ ExitApplication: EventHandler
++ LoginSuccess: EventHandler
++ LoginFailed: EventHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>90</y>
+      <w>240</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>ViewModelBase
+--
++ OnPropertyChanged(string): void
++ OnMessageApplication(string): void
+--
+&lt;&lt;Events&gt;&gt;
++ PropertyChanged
++ MessageApplication</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>200</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>40</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>20</y>
+      <w>170</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>INotifyPropertyChanged</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>250</y>
+      <w>310</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>MainViewModel
+--
+- _model: IOrderModel
+--
++ MenuViewModel(IOrderModel)
+- OnOrders(): void
+- OnAddMenuItem(): void
+- OnLogout(): void
+--
+&lt;&lt;Commands&gt;&gt;
++ AddMenuItemCommand: DelegateCommand
++ OrdersCommand: DelegateCommand
++ LogoutCommand: DelegateCommand
+--
+&lt;&lt;Events&gt;&gt;
++ Orders: EventHandler
++ AddMenuItem: EventHandler
++ LogoutSuccess: EventHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>170</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0;170.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>250</y>
+      <w>340</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>AddNewMovieViewModel
+--
+- _model: IOrderModel
+- _newMenuItem: MenuDTO
+- _categories:ObservableCollection&lt;CategoryDTO&gt;
+--
++ AddMenuItemViewModel(IOrderMosel)
++ LoadDate(): void
+- AddNewMenuItem(): void
+- OnCancel(): void
+- OnSuccessfulAdd: void
+- CheckModel: bool
+--
+&lt;&lt;Commands&gt;&gt;
++ SendCommand: DelegateCommand
++ CancelCommand: DelegateCommand
+--
+&lt;&lt;Events&gt;&gt;
++ Success: EventHandler
++ Canceled: EventHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>130</x>
+      <y>170</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>230.0;10.0;10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>610</y>
+      <w>300</w>
+      <h>330</h>
+    </coordinates>
+    <panel_attributes>OrdersViewModel
+--
+- _model: IOrderModel
+- _filter: String
+- _orders: ObservableCollection&lt;OrdersDTO&gt;
+- _selectedOrders: OrdersDTO
++ Filter: String
++ SelectedOrder: OrdersDTO
++ Orders: ObservableCollection&lt;OrdersDTO&gt;
+--
++ OrdersViewModel(IOrderModel)
+- ListingOrderedItems(): void
+- OnAccomplished(): void
+- FilterName(): void
+- FilterAddress(): void
+- JustAccomplished(): void
+- JustNotAccomplished(): void
+- LoadData(): void
+- OnCancel(): void
+--
+&lt;&lt;Commands&gt;&gt;
++ CancelCommand: DelegateCommand
++ IsAccomplishedCommand: DelegateCommand
++ ListingCommand: DelegateCommand
++ RefreshCommand: DelegateCommand
++ JustAccomplishedCommand: DelegateCommand
++ JustNotAccomplishedCommand: DelegateCommand
++ FilterNameCommand: DelegateCommand
++ FilterAddressCommand: DelegateCommand
+--
+&lt;&lt;Events&gt;&gt;
++ Canceled: EventHandler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>150</y>
+      <w>390</w>
+      <h>480</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;370.0;10.0;370.0;460.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>690</y>
+      <w>360</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>CinemaService : ICinemaService
+--
+- _client: HttpClient
+--
++ OrderModel(string)
++ LoginAsync(string,string): Task&lt;bool&gt;
++ LogoutAsync(string,string): Task&lt;bool&gt;
++ LoadCategories(): Task&lt;IEnumerable&lt;CategoryDTO&gt;&gt;
++ LoadOrders(): Task&lt;IEnumerable&lt;OrdersDTO&gt;
++ SendAccomplishedOrder(OrdersDTO): Task&lt;bool&gt;
++ SendNewMenuItem(MenuDTO): Task&lt;bool&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>750</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>510</y>
+      <w>30</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>620</x>
+      <y>500</y>
+      <w>30</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>330</x>
+      <y>530</y>
+      <w>60</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;160.0;40.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>670</x>
+      <y>60</y>
+      <w>220</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>MessageEventArgs
+--
++ Message: string
+--
++ MessageEventArgs(string): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>100</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>20</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>0</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>EventArgs</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

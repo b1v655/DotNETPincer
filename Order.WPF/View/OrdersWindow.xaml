@@ -1,0 +1,28 @@
+﻿<Window x:Class="Order.WPF.View.OrdersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Order.WPF.View"
+        mc:Ignorable="d"
+        Title="Panaszok" Height="380" Width="600">
+    <StackPanel Margin="0,0,2,2">
+        
+        <DataGrid x:Name="Orders" AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding Orders}"  Margin="0,10,0,10" Height="200" SelectedItem="{Binding SelectedOrder}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Siránkozó nyugger neve" Binding="{Binding ManName}" Width="200"/>
+                <DataGridTextColumn Header="Hona" Binding="{Binding ManAddress}" Width="200"/>
+                <DataGridTextColumn Header="Hibaleírás" Binding="{Binding fail}" Width="200"/>
+                <DataGridTextColumn Header="Mikor küldte" Binding="{Binding time}" Width="200"/>
+                <DataGridTextColumn Header="Elhárítva" Binding="{Binding IsOk}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" Margin="5">
+            <Button Command="{Binding RefreshCommand}" Margin="10,0,10,0" Width="100">Frissítés</Button>
+            <Button Command="{Binding CancelCommand}" Margin="10,0,0,0" Width="100">Vissza</Button>
+        </StackPanel>
+       
+        
+    </StackPanel>
+   
+</Window>

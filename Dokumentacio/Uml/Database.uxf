@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.1.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>230</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Employee
+--
++ ID: int
++ Name: String
++ Username: String
++ Password: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>270</x>
+      <y>70</y>
+      <w>220</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Orders
+--
++ ID: int
++ Name: String
++ Address: String
++ PhoneNumber: String
++ OrderedItems: Menu
++ OrderDate: DateTime
++ OutDate: DateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>250</y>
+      <w>150</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>Menu
+--
++ ID: int
++ Name: String
++ Category: Category
++ Description: String
++ Price: Int32
++ Spicy: bool
++ Vegetarian: bool
++ Count: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>340</y>
+      <w>130</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes> Category
+--
++ ID: int
++ Name: String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>310</y>
+      <w>110</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>m1=1..1</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;60.0;90.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>210</x>
+      <y>160</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>m1=1..*</panel_attributes>
+    <additional_attributes>10.0;120.0;40.0;120.0;40.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+</diagram>

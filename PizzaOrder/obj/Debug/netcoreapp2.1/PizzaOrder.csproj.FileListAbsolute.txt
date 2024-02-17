@@ -1,0 +1,5 @@
+C:\Users\hormi\Desktop\Masodik_beadando\dotNETpincer\PizzaOrder\obj\Debug\netcoreapp2.1\PizzaOrder.csprojAssemblyReference.cache
+C:\Users\hormi\Desktop\Masodik_beadando\dotNETpincer\PizzaOrder\obj\Debug\netcoreapp2.1\PizzaOrder.RazorAssemblyInfo.cache
+C:\Users\hormi\Desktop\Masodik_beadando\dotNETpincer\PizzaOrder\obj\Debug\netcoreapp2.1\PizzaOrder.RazorAssemblyInfo.cs
+C:\Users\hormi\Desktop\Masodik_beadando\dotNETpincer\PizzaOrder\obj\Debug\netcoreapp2.1\PizzaOrder.AssemblyInfoInputs.cache
+C:\Users\hormi\Desktop\Masodik_beadando\dotNETpincer\PizzaOrder\obj\Debug\netcoreapp2.1\PizzaOrder.AssemblyInfo.cs
