@@ -11,9 +11,10 @@ namespace Order.WPF.ViewModel
 {
     class OrdersViewModel : ViewModelBase
     {
-        
+        OrdersDTO _selectedOrder;
         String _filter;
-        private ObservableCollection<PanaszDTO> _orders;
+        private ObservableCollection<OrdersDTO> _orders;
+        private ObservableCollection<MenuDTO> _items;
         public DelegateCommand CancelCommand { get; set; }
         public DelegateCommand IsAccomplishedCommand { get; set; }
         public DelegateCommand ListingCommand { get; set; }
@@ -25,29 +26,51 @@ namespace Order.WPF.ViewModel
         public DelegateCommand FilterAddressCommand { get; set; }
         private readonly IOrderModel _model;
 
-        public ObservableCollection<PanaszDTO> Orders => _orders;
+        public ObservableCollection<OrdersDTO> Orders => _orders;
         public event EventHandler Canceled;
         public OrdersViewModel(IOrderModel model)
         {
             _model = model ?? throw new ArgumentNullException(nameof(model));
             LoadData();
             RefreshCommand = new DelegateCommand(param => LoadData());
+            JustAccomplishedCommand = new DelegateCommand(param => JustAccomplished());
+            JustNotAccomplishedCommand = new DelegateCommand(param => JustNotAccomplished());
+            IsAccomplishedCommand = new DelegateCommand(param => OnAccomplished());
             ListingCommand = new DelegateCommand(param => ListingOrderedItems());
+            FilterNameCommand = new DelegateCommand(param => FilterName());
+            FilterAddressCommand = new DelegateCommand(param => FilterAddress());
             CancelCommand = new DelegateCommand(param => OnCancel());
 
 
         }
-          
+        private async void OnAccomplished()
+        {
+            try
+            {
+                Boolean x = await _model.SendAccomplishedOrder(SelectedOrder);
+                LoadData();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }      
         private async void ListingOrderedItems()
         {
             try
             {
                 List<int> counts = new List<int> { };
                 List<string> list = new List<string> { };
-                
-                _orders = new ObservableCollection<PanaszDTO>(new ObservableCollection<PanaszDTO>(await _model.LoadOrders()).OrderByDescending(x => x.time).Where(x=>x.IsOk==false));
-               
-                new ListingOrderedItems(_orders).Show();
+                List<string> listOfNessesseryItems = SelectedOrder.OrderedItems.Substring(0, SelectedOrder.OrderedItems.Length - 1).Split(',').ToList();
+                foreach (string str in listOfNessesseryItems)
+                {
+                    list.Add(str.Split('$')[0].Substring(0, str.Split('$')[0].Length - 1));
+                    counts.Add(Int32.Parse(str.Split('$')[1]));
+                }
+                _items = new ObservableCollection<MenuDTO>(new ObservableCollection<MenuDTO>(await _model.LoadMenu()).Where(o => list.Contains(o.Name)));
+                for (int i = 0; i < counts.Count(); i++)
+                    _items[i].Count = counts[i];
+                new ListingOrderedItems(_items).Show();
             }
             catch(Exception ex)
             {
@@ -66,11 +89,77 @@ namespace Order.WPF.ViewModel
                 }
             }
         }
+        public OrdersDTO SelectedOrder
+        {
+            get => _selectedOrder;
+            set
+            {
+                if (_selectedOrder != value)
+                {
+                    _selectedOrder = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+        private async void FilterName()
+        {
+            try
+            {
+                _orders = new ObservableCollection<OrdersDTO>(await _model.LoadOrders());
+                _orders = new ObservableCollection<OrdersDTO>(_orders.Where(o => o.Name == Filter));
+                OnPropertyChanged(nameof(Orders));
+            }
+            catch (NetworkException ex)
+            {
+                OnMessageApplication($"Váratlan hiba történt! ({ex.Message})");
+            }
+        }
+        private async void FilterAddress()
+        {
+            try
+            {
+                _orders = new ObservableCollection<OrdersDTO>(await _model.LoadOrders());
+                if(Filter!=null)
+                    _orders = new ObservableCollection<OrdersDTO>(_orders.Where(o => o.Address.Contains( Filter)));
+                OnPropertyChanged(nameof(Orders));
+            }
+            catch (NetworkException ex)
+            {
+                OnMessageApplication($"Váratlan hiba történt! ({ex.Message})");
+            }
+
+        }
+        private async void JustAccomplished()
+        {
+            try
+            {
+                _orders = new ObservableCollection<OrdersDTO>(await _model.LoadOrders());
+                _orders = new ObservableCollection<OrdersDTO>(_orders.Where(o => o.OutDate!=DateTime.MinValue));
+                OnPropertyChanged(nameof(Orders));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+        private async void JustNotAccomplished()
+        {
+            try
+            {
+                _orders = new ObservableCollection<OrdersDTO>(await _model.LoadOrders());
+                _orders = new ObservableCollection<OrdersDTO>(_orders.Where(o => o.OutDate == DateTime.MinValue));
+                OnPropertyChanged(nameof(Orders));
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
         private async void LoadData()
         {
             try
             {
-                _orders = new ObservableCollection<PanaszDTO>(new ObservableCollection<PanaszDTO>(await _model.LoadOrders()).OrderByDescending(x => x.time).Where(x => x.IsOk == false)); ;
+                _orders = new ObservableCollection<OrdersDTO>(await _model.LoadOrders());
 
                 OnPropertyChanged(nameof(Orders));
             }

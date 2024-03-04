@@ -23,7 +23,7 @@ namespace Order.WPF.View
     
     public partial class ListingOrderedItems : Window
     {
-        public ListingOrderedItems(ObservableCollection<PanaszDTO> MyDatas)
+        public ListingOrderedItems(ObservableCollection<MenuDTO> MyDatas)
         {
             InitializeComponent();
             OrderedItems.ItemsSource = MyDatas;

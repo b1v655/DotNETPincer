@@ -9,7 +9,13 @@ namespace Order.WPF.Model
 {
     public interface IOrderModel
     {
-        Task<IEnumerable<PanaszDTO>> LoadOrders();
-        Task<Boolean> SendAccomplishedOrder(PanaszDTO data);
+        Task<IEnumerable<CategoryDTO>> LoadCategories();
+        bool IsUserLoggedIn { get; }
+        Task<bool> LoginAsync(string name, string password);
+        Task<bool> LogoutAsync();
+        Task<IEnumerable<OrdersDTO>> LoadOrders();
+        Task<IEnumerable<MenuDTO>> LoadMenu();
+        Task<Boolean> SendNewMenuItem(MenuDTO data);
+        Task<Boolean> SendAccomplishedOrder(OrdersDTO data);
     }
 }

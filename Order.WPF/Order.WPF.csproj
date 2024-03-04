@@ -68,6 +68,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\AddMenuItemViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MessageEventArgs.cs" />
     <Compile Include="ViewModel\OrdersViewModel.cs" />

@@ -24,6 +24,7 @@ namespace Order.WPF.ViewModel
 
             AddMenuItemCommand = new DelegateCommand(param => OnAddMenuItem()); 
             OrdersCommand = new DelegateCommand(param => OnOrders());
+            LogoutCommand = new DelegateCommand(param => OnLogout());
         }
         private void OnOrders()
         {
@@ -34,5 +35,17 @@ namespace Order.WPF.ViewModel
             AddMenuItem?.Invoke(this, EventArgs.Empty);
         }
 
+        private async void OnLogout()
+        {
+            try
+            {
+                await _model.LogoutAsync();
+                LogoutSuccess?.Invoke(this, EventArgs.Empty);
+            }
+            catch (NetworkException ex)
+            {
+                OnMessageApplication($"Unexpected error! ({ex.Message})");
+            }
+        }
     }
 }

@@ -11,6 +11,7 @@ namespace Order.WPF
     public partial class App : Application
     {
         private IOrderModel _model;
+        private LoginViewModel _loginViewModel;
         private MainViewModel _mainViewModel;
         private LoginWindow _loginWindow;
         private MainWindow _mainWindow;
@@ -28,16 +29,17 @@ namespace Order.WPF
         {
             _model = new OrderModel(ConfigurationManager.AppSettings["baseAddress"]);
 
-            _mainViewModel = new MainViewModel(_model);
-            _mainViewModel.AddMenuItem += OpenAddMenuItem;
-            _mainViewModel.Orders += OpenOrders;
-            _mainViewModel.MessageApplication += ViewModel_MessageApplication;
+            _loginViewModel = new LoginViewModel(_model);
+            _loginViewModel.ExitApplication += ViewModel_ExitApplication;
+            _loginViewModel.MessageApplication += ViewModel_MessageApplication;
+            _loginViewModel.LoginSuccess += ViewModel_LoginSuccess;
+            _loginViewModel.LoginFailed += ViewModel_LoginFailed;
 
-            _mainWindow = new MainWindow
+            _loginWindow = new LoginWindow
             {
-                DataContext = _mainViewModel
+                DataContext = _loginViewModel
             };
-            _mainWindow.Show();
+            _loginWindow.Show();
         }
 
         private void ViewModel_ExitApplication(object sender, EventArgs e)
@@ -63,11 +65,27 @@ namespace Order.WPF
         {
             MessageBox.Show(msg, source, MessageBoxButton.OK, MessageBoxImage.Asterisk);
         }
+        private void ViewModel_Logout(object sender, EventArgs e)
+        {
+            _loginWindow = new LoginWindow
+            {
+                DataContext = _loginViewModel
+            };
+            _loginViewModel = new LoginViewModel(_model);
+
+            _loginViewModel.ExitApplication += ViewModel_ExitApplication;
+            _loginViewModel.MessageApplication += ViewModel_MessageApplication;
+            _loginViewModel.LoginSuccess += ViewModel_LoginSuccess;
+            _loginViewModel.LoginFailed += ViewModel_LoginFailed;
+            _loginWindow.Show();
+            _mainWindow.Close();
+        }
         private void OpenMenu(Window previous = null)
         {
             _mainViewModel = new MainViewModel(_model);
             _mainViewModel.AddMenuItem += OpenAddMenuItem;
             _mainViewModel.Orders += OpenOrders;
+            _mainViewModel.LogoutSuccess += ViewModel_Logout;
             _mainViewModel.MessageApplication += ViewModel_MessageApplication;
 
             _mainWindow = new MainWindow

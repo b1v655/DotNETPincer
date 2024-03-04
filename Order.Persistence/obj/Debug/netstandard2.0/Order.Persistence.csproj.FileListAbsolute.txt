@@ -1,0 +1,11 @@
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\bin\Debug\netstandard2.0\Order.Persistence.deps.json
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\bin\Debug\netstandard2.0\Order.Persistence.dll
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\bin\Debug\netstandard2.0\Order.Persistence.pdb
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.csproj.AssemblyReference.cache
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.AssemblyInfoInputs.cache
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.AssemblyInfo.cs
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.sourcelink.json
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.dll
+C:\Users\milanhorvath\Desktop\alap\kész\DotNETPincer\Order.Persistence\obj\Debug\netstandard2.0\Order.Persistence.pdb

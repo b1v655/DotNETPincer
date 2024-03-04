@@ -57,7 +57,7 @@ namespace Order.WebApi
             var dbContext = serviceProvider.GetRequiredService<PizzaOrderContext>();
             var userManager = serviceProvider.GetRequiredService<UserManager<Employee>>();
             app.UseMvc();
-            DBInitializer.Initialize(dbContext);
+            DBInitializer.Initialize(dbContext, userManager);
         }
     }
 }

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj": {}
+    "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj": {
+    "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj",
         "projectName": "Order.Persistence",
-        "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj",
-        "packagesPath": "C:\\Users\\hormi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj",
+        "packagesPath": "C:\\Users\\milanhorvath\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hormi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\milanhorvath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,10 +26,12 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -40,6 +43,7 @@
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
@@ -66,28 +70,30 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj": {
+    "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj",
+        "projectUniqueName": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj",
         "projectName": "Order.WebApi.Test",
-        "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj",
-        "packagesPath": "C:\\Users\\hormi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi.Test\\obj\\",
+        "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi.Test\\Order.WebApi.Test.csproj",
+        "packagesPath": "C:\\Users\\milanhorvath\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hormi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\milanhorvath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,16 +101,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {
-              "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj": {
-                "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj"
+              "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj": {
+                "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj"
               },
-              "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\Order.WebApi.csproj": {
-                "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\Order.WebApi.csproj"
+              "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\Order.WebApi.csproj": {
+                "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\Order.WebApi.csproj"
               }
             }
           }
@@ -117,6 +125,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.AspNetCore.Mvc.Core": {
               "target": "Package",
@@ -149,33 +158,49 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\Order.WebApi.csproj": {
+    "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\Order.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\Order.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\Order.WebApi.csproj",
         "projectName": "Order.WebApi",
-        "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\Order.WebApi.csproj",
-        "packagesPath": "C:\\Users\\hormi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\Order.WebApi.csproj",
+        "packagesPath": "C:\\Users\\milanhorvath\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hormi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\milanhorvath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -183,16 +208,18 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj": {
-                "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj"
+              "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj": {
+                "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj"
               },
-              "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\PizzaOrder.csproj": {
-                "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\PizzaOrder.csproj"
+              "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\PizzaOrder.csproj": {
+                "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\PizzaOrder.csproj"
               }
             }
           }
@@ -205,6 +232,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
@@ -238,28 +266,30 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\PizzaOrder.csproj": {
+    "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\PizzaOrder.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\PizzaOrder.csproj",
+        "projectUniqueName": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\PizzaOrder.csproj",
         "projectName": "PizzaOrder",
-        "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\PizzaOrder.csproj",
-        "packagesPath": "C:\\Users\\hormi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\PizzaOrder\\obj\\",
+        "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\PizzaOrder.csproj",
+        "packagesPath": "C:\\Users\\milanhorvath\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\PizzaOrder\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\hormi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\milanhorvath\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -267,13 +297,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
             "projectReferences": {
-              "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj": {
-                "projectPath": "C:\\Users\\hormi\\Desktop\\Masodik_beadando\\dotNETpincer\\Order.Persistence\\Order.Persistence.csproj"
+              "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj": {
+                "projectPath": "C:\\Users\\milanhorvath\\Desktop\\alap\\kész\\DotNETPincer\\Order.Persistence\\Order.Persistence.csproj"
               }
             }
           }
@@ -286,6 +318,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "dependencies": {
             "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
@@ -311,11 +344,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

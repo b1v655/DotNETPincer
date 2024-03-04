@@ -13,7 +13,9 @@ namespace Order.Persistence
         {
         }
 
-        public DbSet<Panasz> Panaszok { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Menu> Menu { get; set; }
+        public DbSet<Orders> Orders { get; set; }
 
     }
 }

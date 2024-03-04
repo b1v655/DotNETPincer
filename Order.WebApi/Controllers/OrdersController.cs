@@ -19,27 +19,28 @@ namespace Order.WebApi.Controllers
         {
             _context = context;
         }
+        [Authorize]
         [HttpPost]
-        public async Task<IActionResult> IsAccomplished([FromBody] PanaszDTO item)
+        public async Task<IActionResult> IsAccomplished([FromBody] OrdersDTO newData)
         {
             try
             {
+
                 if (ModelState.IsValid)
                 {
-                    var newMenuItem = new Panasz()
+                    var orders = _context.Orders.Where(o => newData.ID == o.ID);
+                    foreach (var order in orders)
                     {
-                        ManName = item.ManName,
-                        ManAddress = item.ManAddress,
-                        fail = item.fail,
-                        time = DateTime.Now,
-                        IsOk = false
+                        if (order.OutDate == DateTime.MinValue)
+                        {
+                            order.OutDate = DateTime.Now;
+                        }
+                            
+                    }
 
-                    };
-
-                    _context.Panaszok.Add(newMenuItem);
-
-                    _context.SaveChanges();
-
+                    _context.UpdateRange(orders);
+                    await _context.SaveChangesAsync();
+                    return Ok();
                 }
                 else
                 {
@@ -52,19 +53,22 @@ namespace Order.WebApi.Controllers
             }
             return Ok();
         }
+        [Authorize]
         [HttpGet("OrdersList")]
         public IActionResult List()
         {
             try
             {
-                return Ok(_context.Panaszok.ToList().Select(OrdersItem => new PanaszDTO
+                return Ok(_context.Orders.ToList().Select(OrdersItem => new OrdersDTO
                 {
                     ID = OrdersItem.ID,
-                    ManName = OrdersItem.ManName,
-                    ManAddress = OrdersItem.ManAddress,
-                    fail = OrdersItem.fail,
-                    time = OrdersItem.time,
-                    IsOk =  OrdersItem.IsOk
+                    Name = OrdersItem.Name,
+                    Address = OrdersItem.Address,
+                    PhoneNumber = OrdersItem.PhoneNumber,
+                    OrderDate = OrdersItem.OrderDate,
+                    OrderedItems =  OrdersItem.OrderedItems,
+                    OutDate = OrdersItem.OutDate,
+                    FullPrice = OrdersItem.FullPrice
 
                 }));
             }

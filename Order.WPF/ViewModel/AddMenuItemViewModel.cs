@@ -12,11 +12,23 @@ namespace Order.WPF.ViewModel
     class AddMenuItemViewModel : ViewModelBase
     {
         private readonly IOrderModel _model;
-        private PanaszDTO _newMenuItem;
+        private MenuDTO _newMenuItem;
+        public ObservableCollection<CategoryDTO> _categories;
         
         public DelegateCommand SendCommand { get; set; }
         public DelegateCommand CancelCommand { get; set; }
-        
+        public ObservableCollection<CategoryDTO> Categories
+        {
+            get { return _categories; }
+            private set
+            {
+                if (_categories != value)
+                {
+                    _categories = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
         public event EventHandler Success;
         public event EventHandler Canceled;
 
@@ -24,13 +36,27 @@ namespace Order.WPF.ViewModel
         {
             _model = model;
 
-            _newMenuItem = new PanaszDTO();
+            _newMenuItem = new MenuDTO();
+            LoadData();
             SendCommand = new DelegateCommand(param => AddNewMenuItem());
             CancelCommand = new DelegateCommand(param => OnCancel());
             
         }
 
-        public PanaszDTO NewMenuItem
+        private async void LoadData()
+        {
+            try
+            {
+                
+                Categories = new ObservableCollection<CategoryDTO>(await _model.LoadCategories());
+                
+            }
+            catch (NetworkException ex)
+            {
+                OnMessageApplication($"Váratlan hiba történt! ({ex.Message})");
+            }
+        }
+        public MenuDTO NewMenuItem
         {
             get => _newMenuItem;
             set
@@ -46,7 +72,7 @@ namespace Order.WPF.ViewModel
         private async void AddNewMenuItem()
         {
             if (!CheckModel()) { return; }
-            if (await _model.SendAccomplishedOrder(NewMenuItem))
+            if (await _model.SendNewMenuItem(NewMenuItem))
             {
                 OnSuccessfulAdd();
             }
@@ -68,19 +94,19 @@ namespace Order.WPF.ViewModel
 
         private Boolean CheckModel()
         {
-            if (NewMenuItem.ManName == null)
+            if (NewMenuItem.Name == null)
             {
                 OnMessageApplication("Nem adta meg a nevet!");
                 return false;
             }
-            if (NewMenuItem.ManAddress == null)
+            if (NewMenuItem.Price.ToString() == null)
             {
-                OnMessageApplication("Nem adott meg címet!");
+                OnMessageApplication("Nem adott meg árat!");
                 return false;
             }
-            if (NewMenuItem.fail == null)
+            if (NewMenuItem.CategoryID.ToString() == null)
             {
-                OnMessageApplication("Nem adott meg hibát!");
+                OnMessageApplication("Nem adott meg kategóriát!");
                 return false;
             }
             return true;
